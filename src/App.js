@@ -8,6 +8,10 @@ import "./App.css";
 
 import socket from "./services/socket";
 
+import Login from "./components/Login";
+import { auth } from "./firebase";
+import { onAuthStateChanged } from "firebase/auth";
+
 const messageSound =
   new Audio(
     "https://notificationsounds.com/storage/sounds/file-sounds-1150-pristine.mp3"
@@ -43,6 +47,32 @@ function App() {
 
   const [interestInput, setInterestInput] =
     useState("");
+  
+  const [user, setUser] = useState(null);
+  const [guestMode, setGuestMode] = useState(false);
+  const [guestStartTime, setGuestStartTime] = useState(null);
+
+useEffect(() => {
+
+  const unsubscribe = onAuthStateChanged(
+    auth,
+    (currentUser) => {
+      setUser(currentUser);
+    }
+  );
+
+  return unsubscribe;
+
+}, []);
+
+useEffect(() => {
+
+  if (!guestMode || user)
+    return;
+
+  setGuestStartTime(Date.now());
+
+}, [guestMode, user]); 
 
   const [interests, setInterests] =
     useState([]);
@@ -361,6 +391,7 @@ function App() {
       }
 
     );
+ 
 
     return () => {
 
@@ -460,6 +491,16 @@ function App() {
 
   }, [chatStarted]);
 
+if (!user && !guestMode) {
+
+  return (
+    <Login
+      setUser={setUser}
+      setGuestMode={setGuestMode}
+    />
+  );
+
+}
   return (
 
     <div className="app">
@@ -483,7 +524,7 @@ function App() {
             </div>
 
             <h1 className="logo">
-              Kadhaipomaaa
+              Kadhaipomaa
             </h1>
 
             <p className="subtitle">

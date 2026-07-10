@@ -54,6 +54,12 @@ function App() {
 
 useEffect(() => {
 
+  const visited = localStorage.getItem("hasVisited");
+  if (!visited) {
+    localStorage.setItem("hasVisited", "true");
+    setGuestMode(true);
+  }
+
   const unsubscribe = onAuthStateChanged(
     auth,
     (currentUser) => {
@@ -97,6 +103,10 @@ useEffect(() => {
 
   const [strangerName, setStrangerName] =
     useState("Waiting...");
+
+  const [isBanned, setIsBanned] = useState(false);
+  const [banMessage, setBanMessage] = useState("");
+  const [warningMessage, setWarningMessage] = useState("");
 
   const [roomId, setRoomId] =
     useState("");
@@ -391,6 +401,21 @@ useEffect(() => {
       }
 
     );
+
+    socket.on("warning", (data) => {
+      setWarningMessage(data.message);
+      setTimeout(() => setWarningMessage(""), 5000);
+    });
+
+    socket.on("banned", (data) => {
+      setIsBanned(true);
+      setBanMessage(data.message);
+      setGuestMode(false);
+      setUser(null);
+      setChatStarted(false);
+      setRoomId("");
+      socket.disconnect();
+    });
  
 
     return () => {
@@ -412,6 +437,9 @@ useEffect(() => {
       socket.off(
         "stranger-typing"
       );
+
+      socket.off("warning");
+      socket.off("banned");
 
     };
 
@@ -491,6 +519,15 @@ useEffect(() => {
 
   }, [chatStarted]);
 
+if (isBanned) {
+  return (
+    <div className="app" style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", color: "white" }}>
+      <h1 style={{ color: "#ff4444", fontSize: "3rem", marginBottom: "1rem" }}>BANNED</h1>
+      <p style={{ fontSize: "1.2rem", textAlign: "center", maxWidth: "80%" }}>{banMessage}</p>
+    </div>
+  );
+}
+
 if (!user && !guestMode) {
 
   return (
@@ -504,6 +541,12 @@ if (!user && !guestMode) {
   return (
 
     <div className="app">
+
+      {warningMessage && (
+        <div style={{ position: "absolute", top: "20px", left: "50%", transform: "translateX(-50%)", backgroundColor: "#ff4444", color: "white", padding: "10px 20px", borderRadius: "8px", zIndex: 1000, fontWeight: "bold" }}>
+          {warningMessage}
+        </div>
+      )}
 
       <div className="pink-blur blur1"></div>
 

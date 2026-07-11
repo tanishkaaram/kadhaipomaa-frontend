@@ -32,31 +32,31 @@ Kadhaipomaa is a fast, anonymous, real-time chat application built with React. M
    The app will run at `http://localhost:3000`.
 
 ## Deployment
-This project is optimized for deployment on **Vercel**. 
-All SPA routing rules are pre-configured in `vercel.json` to handle React client-side paths (like the `/admin` dashboard) perfectly.
+This project is optimized for deployment on **Vercel**. All SPA routing rules are pre-configured in `vercel.json` to handle React client-side paths (like the `/admin` dashboard) perfectly.
 
 ## App Showcase
-Here are some previews of the core features in action:
+Here are some previews of the core features in action. Place your screenshots in a `screenshots/` folder at the repository root and use the relative paths below.
 
 ### 1. Sign Up & Login
 Users can join anonymously, or sign in securely via Email/Google.
-*(Upload your Login screen screenshot here)*
-![Sign Up](url_to_your_screenshot)
+![Sign Up](./screenshots/signup.png)
 
 ### 2. Interest Selection
 Find specific strangers by entering matching interests.
-*(Upload your Interests screen screenshot here)*
-![Interests](url_to_your_screenshot)
+![Interests](./screenshots/interests.png)
 
 ### 3. Anonymous Chat Box
 Real-time text chat with typing indicators and online status.
-*(Upload your Chat Box screenshot here)*
-![Chat Box](url_to_your_screenshot)
+![Chat Box](./screenshots/chat.png)
 
 ### 4. Moderation & Ban System
 Automated profanity filter and a 3-strike temporary ban to maintain a safe environment.
-*(Upload your Ban screen screenshot here)*
-![Temporary Ban](url_to_your_screenshot)
+![Temporary Ban](./screenshots/ban.png)
+
+## How to Add/Update Screenshots
+1. Create a folder named `screenshots` at the repo root if it doesn't exist.
+2. Save your images as `signup.png`, `interests.png`, `chat.png`, and `ban.png` respectively.
+3. Commit the images and push – the README will automatically display the new screenshots.
 
 ---
 

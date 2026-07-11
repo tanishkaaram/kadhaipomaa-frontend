@@ -39,19 +39,19 @@ Here are some previews of the core features in action. Place your screenshots in
 
 ### 1. Sign Up & Login
 Users can join anonymously, or sign in securely via Email/Google.
-![Sign Up](./screenshots/signup.png)
+![Sign Up](./signup.png)
 
 ### 2. Interest Selection
 Find specific strangers by entering matching interests.
-![Interests](./screenshots/interests.png)
+![Interests](./interests.png)
 
 ### 3. Anonymous Chat Box
 Real-time text chat with typing indicators and online status.
-![Chat Box](./screenshots/chat.png)
+![Chat Box](./chat.png)
 
 ### 4. Moderation & Ban System
 Automated profanity filter and a 3-strike temporary ban to maintain a safe environment.
-![Temporary Ban](./screenshots/ban.png)
+![Temporary Ban](./ban.png)
 
 ## How to Add/Update Screenshots
 1. Create a folder named `screenshots` at the repo root if it doesn't exist.

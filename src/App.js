@@ -1070,6 +1070,9 @@ if (!user && !guestMode) {
 
       </div>
 
+      <footer style={{ position: "absolute", bottom: "10px", width: "100%", textAlign: "center", color: "rgba(255,255,255,0.4)", fontSize: "0.8rem", pointerEvents: "none" }}>
+        Kadhaipomaa &copy; 2026 | Developed by Tanishka R. All Rights Reserved.
+      </footer>
     </div>
 
   );

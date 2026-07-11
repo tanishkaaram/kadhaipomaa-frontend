@@ -34,3 +34,35 @@ Kadhaipomaa is a fast, anonymous, real-time chat application built with React. M
 ## Deployment
 This project is optimized for deployment on **Vercel**. 
 All SPA routing rules are pre-configured in `vercel.json` to handle React client-side paths (like the `/admin` dashboard) perfectly.
+
+## App Showcase
+Here are some previews of the core features in action:
+
+### 1. Sign Up & Login
+Users can join anonymously, or sign in securely via Email/Google.
+*(Upload your Login screen screenshot here)*
+![Sign Up](url_to_your_screenshot)
+
+### 2. Interest Selection
+Find specific strangers by entering matching interests.
+*(Upload your Interests screen screenshot here)*
+![Interests](url_to_your_screenshot)
+
+### 3. Anonymous Chat Box
+Real-time text chat with typing indicators and online status.
+*(Upload your Chat Box screenshot here)*
+![Chat Box](url_to_your_screenshot)
+
+### 4. Moderation & Ban System
+Automated profanity filter and a 3-strike temporary ban to maintain a safe environment.
+*(Upload your Ban screen screenshot here)*
+![Temporary Ban](url_to_your_screenshot)
+
+---
+
+## 🛑 Copyright & Usage Restriction
+© 2026 Tanishka R (Kadhaipomaa). All Rights Reserved.
+
+This repository and its source code are provided for portfolio evaluation and recruiter review ONLY.
+
+You are strictly prohibited from copying, cloning, modifying, distributing, or hosting this application (in whole or in part) for personal, educational, or commercial use without explicit written permission from the author.

@@ -9,6 +9,7 @@ import "./App.css";
 import socket from "./services/socket";
 
 import Login from "./components/Login";
+import AdminPage from "./components/AdminPage";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -518,6 +519,10 @@ useEffect(() => {
     };
 
   }, [chatStarted]);
+
+if (window.location.pathname === "/admin") {
+  return <AdminPage />;
+}
 
 if (isBanned) {
   return (

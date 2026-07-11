@@ -520,7 +520,7 @@ useEffect(() => {
 
   }, [chatStarted]);
 
-if (window.location.pathname === "/admin") {
+if (window.location.pathname.startsWith("/admin")) {
   return <AdminPage />;
 }
 

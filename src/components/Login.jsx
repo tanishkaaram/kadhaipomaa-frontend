@@ -86,7 +86,7 @@ return (
     <div className="login-card">
 
       <h1 className="logo">
-        Kadhaipomaaa
+        Kadhaipomaa
       </h1>
 
       <p className="subtitle">
